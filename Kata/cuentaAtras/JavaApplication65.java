@@ -1,23 +1,23 @@
 package javaapplication65;
+import java.util.concurrent.TimeUnit;
 
  //@author Geremias Bristot
 
 public class JavaApplication65 {
 
     public static void main(String[] args) {
-        cuentaAtras(30, 5);
+        cuentaAtras(10, 2);
         
     }
     
     public static void cuentaAtras(int primerNum, int segundos){
-        int zero = 0;
-        for(int i = primerNum; i >= 0; i -= segundos){
+        for(int i = primerNum; i >= 0; i--){
             System.out.println(i);
-            zero = i;
-            }
-        if(zero != 0){
-                zero = 0;
-                System.out.println(zero);
+            try{
+                TimeUnit.SECONDS.sleep(segundos);
+            }catch(InterruptedException e){
+                Thread.currentThread().interrupt();
+                }
         }
         
     }
