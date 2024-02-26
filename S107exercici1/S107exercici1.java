@@ -10,7 +10,7 @@ public class S107exercici1 {
         
         Treballador treballador = new Treballador("Arya", "Stark", 17.5);
         TreballadorPresencial treballadorPresencial = new TreballadorPresencial("Frodo", "Baggins", 15.0);
-        TreballadorOnline treballadorOnline = new TreballadorOnline("Rick", "Sanchezn", 20.0);
+        TreballadorOnline treballadorOnline = new TreballadorOnline("Rick", "Sanchez", 20.0);
 
         double nominaTreballador = treballador.calcularNomina(horesTreballades);
         double nominaTreballadorPresencial = treballadorPresencial.calcularNomina(horesTreballades);
