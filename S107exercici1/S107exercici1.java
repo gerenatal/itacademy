@@ -12,14 +12,10 @@ public class S107exercici1 {
         TreballadorPresencial treballadorPresencial = new TreballadorPresencial("Frodo", "Baggins", 15.0);
         TreballadorOnline treballadorOnline = new TreballadorOnline("Rick", "Sanchez", 20.0);
 
-        double nominaTreballador = treballador.calcularNomina(horesTreballades);
-        double nominaTreballadorPresencial = treballadorPresencial.calcularNomina(horesTreballades);
-        double nominaTreballadorOnline = treballadorOnline.calcularNomina(horesTreballades);
-
         //Check if Override worked:
-        System.out.println(nominaTreballador);
-        System.out.println(nominaTreballadorPresencial);
-        System.out.println(nominaTreballadorOnline);
+        System.out.println((double)treballador.calcularNomina(horesTreballades));
+        System.out.println((double)treballadorPresencial.calcularNomina(horesTreballades));
+        System.out.println((double)treballadorOnline.calcularNomina(horesTreballades));
     }
     
 }
