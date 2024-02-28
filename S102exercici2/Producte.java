@@ -9,6 +9,7 @@ public class Producte {
         this.preu = preu;
     }
     
+    //Setters
     public void setNom(String nom){
         this.nom = nom;
     }
@@ -16,10 +17,16 @@ public class Producte {
         this.preu = preu;
     }
     
+    //Getters
     public String getNom(){
         return nom;
     }
     public double getPreu(){
         return preu;
+    }
+    
+    @Override
+    public String toString() {
+        return "(" + nom + ", " + preu + ")";
     }
 }
