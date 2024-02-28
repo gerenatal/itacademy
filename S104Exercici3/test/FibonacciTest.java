@@ -17,7 +17,7 @@ public class FibonacciTest {
     void testArrayIndexOutOfBoundsException() {
         Fibonacci fibonacci = new Fibonacci(5);
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            int numero = fibonacci.getLista()[5]; // Trying to access index 5, which is out of bounds
+            int numero = fibonacci.getLista()[5];
         });
     }
 }
