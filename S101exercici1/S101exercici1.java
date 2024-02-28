@@ -5,12 +5,13 @@ package s101exercici1;
 public class S101exercici1 {
 
     public static void main(String[] args) {
-        Instrument instrument = new Corda();
-        Instrument instrument2 = new Corda();
-        instrument.tocar();
-        instrument2.tocar();
-        System.out.println(instrument.nom);
-        System.out.println(instrument2.nom);
+        Corda guitarra = new Corda("guitarra", 300);
+        Vent flauta = new Vent("flauta", 250);
+        Percussio tambor = new Percussio("tambor", 725);
+        
+        guitarra.tocar();
+        flauta.tocar();
+        tambor.tocar();
         
     } 
 }

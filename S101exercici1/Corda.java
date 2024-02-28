@@ -1,14 +1,13 @@
 package s101exercici1;
 
 public class Corda extends Instrument {
-    public Corda (){
-        super(nom, preu);
-        System.out.println("Calling constructor");
-    }
     
     static{
-        nom = "Violao";
-        System.out.println("Calling static block");
+        System.out.println("Llamando a la classe Corda");
+    }
+    
+    public Corda (String nom, double preu){
+        super(nom, preu);
     }
     
     @Override
