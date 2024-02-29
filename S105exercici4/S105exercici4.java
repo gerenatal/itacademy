@@ -8,11 +8,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Scanner;
 
 public class S105exercici4 {
 
     public static void main(String[] args) {
-        String pathName = "C:\\Users\\gbris\\OneDrive\\Imagens\\2019";
+        String pathName = scanString("Insert the directory: ");
         String ext = "jpg";
 
         try {
@@ -98,5 +99,13 @@ public class S105exercici4 {
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }
+    }
+    
+    static String scanString(String message){
+        Scanner in = new Scanner(System.in);
+        String inputLine;
+        System.out.println(message);
+        inputLine = in.nextLine();
+        return inputLine;
     }
 }
