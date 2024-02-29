@@ -16,18 +16,17 @@ public class S105Exercici5 {
         llistaDeOrdinadors.get(0).setMemoriaRAM(32);
         llistaDeOrdinadors.get(1).executant("Eclipse");
         
-        // Serialisando
-        serializeArrayList(llistaDeOrdinadors, "ordinadores.ser");
+        String fileName = "ordinadores.ser";
         
-        // Deserialisando
-        ArrayList<Ordinador> deserializeArrayList = deserializeArrayList("ordinadores.ser");
+        serializeArrayList(llistaDeOrdinadors, fileName);
+        
+        ArrayList<Ordinador> deserializeArrayList = deserializeArrayList(fileName);
         
         for (Ordinador ordinador : deserializeArrayList) {
             System.out.println(ordinador.toString());
         }
     }
     
-    // Metodo para serialisar
     public static void serializeArrayList(ArrayList<Ordinador> lista, String fileName) {
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(fileName))) {
             outputStream.writeObject(lista);
@@ -37,7 +36,6 @@ public class S105Exercici5 {
         }
     }
     
-    // Metodo para desserialisar
     public static ArrayList<Ordinador> deserializeArrayList(String fileName) {
         ArrayList<Ordinador> lista = null;
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(fileName))) {
