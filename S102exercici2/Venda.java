@@ -16,7 +16,7 @@ public class Venda {
     
     public void calcularTotal() throws VendaBuidaException{
         if(cesta.isEmpty()){
-            throw new VendaBuidaException();
+            throw new VendaBuidaException("Per fer una venda primer has d afegir productes");
         }
         
         preuTotal = 0.0;
