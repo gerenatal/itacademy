@@ -3,13 +3,14 @@ package s105exercici1;
 //@author Geremias Bristot
 
 import java.io.File;
+import java.util.Scanner;
 
 public class S105exercici1 {
 
     public static void main(String[] args) {
-        String pathName = "C:\\Users\\gbris\\OneDrive\\Imagens\\2019";
+        String pathName = scanString("Insert the directory: ");
         String ext = "jpg";
-                
+        
         try {
             File filePath = new File(pathName);
             File[] files;
@@ -30,6 +31,14 @@ public class S105exercici1 {
             System.err.println("Error: " + e.getMessage());
         }
         
+    }
+    
+    static String scanString(String message){
+        Scanner in = new Scanner(System.in);
+        String inputLine;
+        System.out.println(message);
+        inputLine = in.nextLine();
+        return inputLine;
     }
     
 }
