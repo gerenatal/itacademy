@@ -84,9 +84,7 @@ db.createCollection('Client', {
                       }
                     },
                     Frame_type: {
-                      enum: "floating",
-                      "paste",
-                      "metallic"
+                      enum: 'floating', 'paste', 'metallic'
                     },
                     Frame_color: {
                       bsonType: 'string'
