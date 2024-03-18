@@ -1,0 +1,80 @@
+db.createCollection('Glasses', {
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      title: 'Glasses',
+      required: ['Data', 'Bought_by'],
+      properties: {
+        Data: {
+          bsonType: 'object',
+          title: 'object',
+          required: ['Brand', 'Frame', 'Price', 'Provider'],
+          properties: {
+            Brand: {
+              bsonType: 'string'
+            },
+            Frame: {
+              enum: ['Floating', 'Paste', 'Metallic']
+            },
+            Price: {
+              bsonType: 'decimal'
+            },
+            Provider: {
+              bsonType: 'object',
+              title: 'object',
+              required: ['Name', 'Address', 'Telephone', 'NIF'],
+              properties: {
+                Name: {
+                  bsonType: 'string'
+                },
+                Address: {
+                  bsonType: 'object',
+                  title: 'object',
+                  required: ['Street', 'City', 'Postal_code', 'Country'],
+                  properties: {
+                    Street: {
+                      bsonType: 'string'
+                    },
+                    Number: {
+                      bsonType: 'int'
+                    },
+                    City: {
+                      bsonType: 'string'
+                    },
+                    Postal_code: {
+                      bsonType: 'int'
+                    },
+                    Country: {
+                      bsonType: 'string'
+                    }
+                  }
+                },
+                Telephone: {
+                  bsonType: 'int'
+                },
+                Fax: {
+                  bsonType: 'int'
+                },
+                NIF: {
+                  bsonType: 'string'
+                }
+              }
+            }
+          }
+        },
+        Bought_by: {
+          bsonType: 'array',
+          items: {
+            title: 'object',
+            required: ['Client'],
+            properties: {
+              Client: {
+                bsonType: 'objectId'
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+});
