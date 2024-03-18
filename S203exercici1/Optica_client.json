@@ -58,13 +58,13 @@ db.createCollection('Client', {
         Last_shoppings: {
           bsonType: 'array',
           items: {
-            title: 'object',
+            bsonType: 'object',
             required: ['Glasses', 'Employee_id', 'Date'],
             properties: {
               Glasses: {
                 bsonType: 'array',
                 items: {
-                  title: 'object',
+                  bsonType: 'object',
                   required: ['Brand', 'Graduation', 'Frame_type', 'Frame_color', 'Price'],
                   properties: {
                     Brand: {
@@ -84,7 +84,7 @@ db.createCollection('Client', {
                       }
                     },
                     Frame_type: {
-                      enum: 'floating', 'paste', 'metallic'
+                      enum: ['floating', 'paste', 'metallic']
                     },
                     Frame_color: {
                       bsonType: 'string'
