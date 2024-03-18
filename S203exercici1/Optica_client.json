@@ -1,0 +1,124 @@
+db.createCollection('Client', {
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      title: 'Client',
+      required: ['Name', 'Data', 'Last_shoppings'],
+      properties: {
+        Name: {
+          bsonType: 'string'
+        },
+        Data: {
+          bsonType: 'object',
+          title: 'object',
+          required: ['Address', 'Telephone', 'Email', 'Register_date'],
+          properties: {
+            Address: {
+              bsonType: 'object',
+              title: 'object',
+              required: ['Street', 'Number', 'City', 'Postal_code', 'Country'],
+              properties: {
+                Street: {
+                  bsonType: 'string'
+                },
+                Number: {
+                  bsonType: 'int'
+                },
+                Floor: {
+                  bsonType: 'string'
+                },
+                Door: {
+                  bsonType: 'string'
+                },
+                City: {
+                  bsonType: 'string'
+                },
+                Postal_code: {
+                  bsonType: 'int'
+                },
+                Country: {
+                  bsonType: 'string'
+                }
+              }
+            },
+            Telephone: {
+              bsonType: 'int'
+            },
+            Email: {
+              bsonType: 'string'
+            },
+            Register_date: {
+              bsonType: 'date'
+            },
+            Recommended_by: {
+              bsonType: 'objectId'
+            }
+          }
+        },
+        Last_shoppings: {
+          bsonType: 'array',
+          items: {
+            title: 'object',
+            required: ['Glasses', 'Employee_id', 'Date'],
+            properties: {
+              Glasses: {
+                bsonType: 'array',
+                items: {
+                  title: 'object',
+                  required: ['Brand', 'Graduation', 'Frame_type', 'Frame_color', 'Price'],
+                  properties: {
+                    Brand: {
+                      bsonType: 'string'
+                    },
+                    Graduation: {
+                      bsonType: 'object',
+                      title: 'object',
+                      required: ['Right', 'Left'],
+                      properties: {
+                        Right: {
+                          bsonType: 'decimal'
+                        },
+                        Left: {
+                          bsonType: 'decimal'
+                        }
+                      }
+                    },
+                    Frame_type: {
+                      enum: "floating",
+                      "paste",
+                      "metallic"
+                    },
+                    Frame_color: {
+                      bsonType: 'string'
+                    },
+                    Glass_color: {
+                      bsonType: 'object',
+                      title: 'object',
+                      properties: {
+                        Right: {
+                          bsonType: 'string'
+                        },
+                        Left: {
+                          bsonType: 'string'
+                        }
+                      }
+                    },
+                    Price: {
+                      bsonType: 'decimal'
+                    }
+                  }
+                }
+              },
+              Employee_id: {
+                bsonType: 'objectId'
+              },
+              Date: {
+                bsonType: 'date'
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+});
